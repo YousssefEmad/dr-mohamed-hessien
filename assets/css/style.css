@@ -628,11 +628,10 @@ select {
 }
 .preloader .logo-preloder {
     position: absolute;
-    top: 50%;
-   inset-inline-start: 50%;
-    width: 50px;
+    top: 48%;
+   inset-inline-start: 48%;
+    width: 80px;
     height: auto;
-    transform: translate(-50%, -50%);
 }
 .preloader .cssload-container {
   width: 60px;
@@ -12491,6 +12490,11 @@ footer .copyright-area.light-theme .footer-menu ul li::before {
     }
 }
 @media (max-width: 991px) {
+    .preloader .logo-preloder {
+    top: 48%;
+   inset-inline-start: 43%;
+
+}
     .sigma-footer .contact-maps {
         height: 350px;
     }
