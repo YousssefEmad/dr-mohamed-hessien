@@ -131,26 +131,56 @@ var mirandaDoc;
             });
         },
         mainNavigation() {
-            $(".sigma-hamburger-menu").on('click', function() {
-                $(".sigma-menu-btn").toggleClass("active");
-                $(".sigma-mobile-menu").toggleClass("active");
-            });
-            $('.menu-item-has-children>a').on('click', function(e) {
-                var element = $(this).parent('li');
-                if (element.hasClass('open')) {
-                    element.removeClass('open');
-                    element.find('li').removeClass('open');
-                    element.find('ul').slideUp();
-                } else {
-                    element.addClass('open');
-                    element.children('ul').slideDown();
-                    element.siblings('li').children('ul').slideUp();
-                    element.siblings('li').removeClass('open');
-                    element.siblings('li').find('li').removeClass('open');
-                    element.siblings('li').find('ul').slideUp();
-                }
-            });
-        },
+
+    $(".sigma-hamburger-menu").on('click', function(e) {
+        e.stopPropagation();
+
+        $(".sigma-menu-btn").toggleClass("active");
+        $(".sigma-mobile-menu").toggleClass("active");
+    });
+
+
+    // إغلاق المنيو عند الضغط خارجها
+    $(document).on('click', function(e) {
+
+        if (
+            !$(e.target).closest(".sigma-mobile-menu").length &&
+            !$(e.target).closest(".sigma-hamburger-menu").length
+        ) {
+            $(".sigma-menu-btn").removeClass("active");
+            $(".sigma-mobile-menu").removeClass("active");
+        }
+
+    });
+
+
+    $('.menu-item-has-children>a').on('click', function(e) {
+
+        e.preventDefault();
+
+        var element = $(this).parent('li');
+
+        if (element.hasClass('open')) {
+
+            element.removeClass('open');
+            element.find('li').removeClass('open');
+            element.find('ul').slideUp();
+
+        } else {
+
+            element.addClass('open');
+            element.children('ul').slideDown();
+
+            element.siblings('li').children('ul').slideUp();
+            element.siblings('li').removeClass('open');
+            element.siblings('li').find('li').removeClass('open');
+            element.siblings('li').find('ul').slideUp();
+
+        }
+
+    });
+
+},
 
         //===== 02. Banner Slider
         bannerSlider() {

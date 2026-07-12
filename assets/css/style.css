@@ -2737,7 +2737,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
     transform: translateX(-100%);
     position: fixed;
     top: 0;
-   inset-inline-start: 0;
+   left: 0;
     background-color: #0F3041;
     height: 100vh;
     z-index: 10;
