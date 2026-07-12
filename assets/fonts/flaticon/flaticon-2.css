@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?deb74b6c27d50e50c982eb3b6f212581") format("truetype"),
+url("./flaticon.woff?deb74b6c27d50e50c982eb3b6f212581") format("woff"),
+url("./flaticon.woff2?deb74b6c27d50e50c982eb3b6f212581") format("woff2"),
+url("./flaticon.eot?deb74b6c27d50e50c982eb3b6f212581#iefix") format("embedded-opentype"),
+url("./flaticon.svg?deb74b6c27d50e50c982eb3b6f212581#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, 
+i[class*=" flaticon-"]:before,
+span[class^="flaticon-"]:before, 
+span[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-phone:before {
+    content: "\f101";
+}
+.flaticon-judging:before {
+    content: "\f102";
+}
+.flaticon-auction:before {
+    content: "\f103";
+}
+.flaticon-balance:before {
+    content: "\f104";
+}
+.flaticon-document:before {
+    content: "\f105";
+}
+.flaticon-family:before {
+    content: "\f106";
+}
+.flaticon-pharmacy:before {
+    content: "\f107";
+}
+.flaticon-real-estate:before {
+    content: "\f108";
+}
+.flaticon-message:before {
+    content: "\f109";
+}
+.flaticon-criminal:before {
+    content: "\f10a";
+}
+.flaticon-abstract:before {
+    content: "\f10b";
+}

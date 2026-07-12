@@ -1,0 +1,269 @@
+body {
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #a3a3a3;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: #001926;
+    direction: rtl;
+    text-align: right;
+}
+html {
+    width: 100%;
+    overflow-x: hidden;
+    direction: rtl;
+    text-align: right;
+}
+.banner-area {
+    cursor: none;
+    overflow: hidden;
+    direction: ltr !important;
+}
+.offcanvas-wrapper .offcanvas-widget .widget .widget-title::before {
+    position: absolute;
+    left: unset;
+    right: 0;
+    top: 0;
+}
+.offcanvas-wrapper .offcanvas-widget .widget .widget-title {
+    padding-inline-start: 30px;}
+.offcanvas-wrapper .offcanvas-widget .widget .widget-title {
+    padding-inline-start: 30px;
+}
+.offcanvas-wrapper .offcanvas-widget .widget .widget-title-2{
+    padding-inline-start: 30px;
+}
+.offcanvas-wrapper .offcanvas-widget .widget .widget-title-2::before {
+    position: absolute;
+    left: unset;
+    right: 0;
+    top: 0;
+}
+.banner-thumb{
+    direction: ltr;
+    text-align: left;
+}
+.about-section .about-right-bottom {
+    position: absolute;
+    left: 0;
+    right: unset;
+    bottom: 0;
+    z-index: -1;
+}
+.team-loop{
+    direction: ltr;
+}
+.blog-style-2 .blog-post .blog-data .post-link>span {
+    margin-left: 0;
+    margin-right: 15px;
+}
+.about-section .about-right-bottom .about-bottom-img::before {
+    transform: rotate(180deg);
+}
+.blog-style-2 .blog-post .blog-data .post-link:after {
+    content: "\f053";
+    font-family: "Font Awesome 5 Pro";
+    margin-left: 0;
+    margin-right: 15px;
+    font-size: 14px;
+    line-height: 0;
+    position: relative;
+    top: 0px;
+    transition: opacity 1s ease, width 1s ease, margin 1s ease;
+}
+footer .copyright-area .footer-menu ul li::before {
+    position: absolute;
+    right: 0;
+    left: unset;
+    top: 50%;
+}
+footer .copyright-area .footer-menu ul li {
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+    padding-inline-start: 15px;
+    margin-right: 15px;
+}
+.footer-menu{
+    text-align: left !important;
+}
+footer .footer-widget-area .widget.site-info-widget .social-links {
+    text-align: right;
+}
+footer .footer-widget-area .widget.nav-widget ul li {
+    float: right;
+}
+footer .footer-widget-area .widget.nav-widget ul li a::before {
+    content: '\f344';
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 0;
+    margin-left: 10px;
+}
+footer .footer-widget-area .widget.nav-widget ul li a {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    display: flex;
+    align-items: unset;
+}
+.breadcrumb-area .breadcrumb-text .breadcrumb-nav li:not(:first-child) {
+    padding-left: 0;
+    padding-right: 20px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+.breadcrumb-area .breadcrumb-text .breadcrumb-nav li:not(:first-child)::before {
+    position: absolute;
+    left: 68px;
+    right: 0;
+    font-size: 7px;
+    top: 50%;
+    -webkit-transform: translateY(-48%) rotate(90deg);
+    transform: translateY(-50%) rotate(45deg);
+    content: "\f45c";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    color: #fff;
+}
+.text-block.with-pattern .pattern-wrap {
+    position: absolute;
+    background: #0f3041;
+    left: 0;
+    right: unset;
+    height: 100%;
+    z-index: -1;
+    width: 30%;
+    top: 0;
+}
+.block-text p {
+    padding-right: 0;
+    padding-left: 25px;
+}
+.inner-slider .rooms-slider-one.row {
+    margin-left: -20px;
+    margin-right: -20px;
+    direction: ltr;
+    text-align: unset;
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    direction: ltr !important;
+}
+.inner-slider .rooms-content-wrap .room-content-box .slider-count {
+    position: absolute;
+    left: 50px;
+    right: unset;
+}
+.fa-arrow-right:before {
+    content: "\f062";
+}
+.image-type-section .room-items .room-box .room-content h3:hover .more-serv i {
+    transform: rotate(-90deg);
+}
+.features-loop .feature-box .icon {
+    text-align: end;
+}
+.news-details-box .entry-content ul.list-icon li {
+    padding-left: 0;
+    padding-inline-start: 60px;
+    position: relative;
+}
+.news-details-box .entry-content ul.list-icon li::before {
+    position: absolute;
+    right: 30px;
+    left: unset;
+    top: 50%;
+}
+.input-group.textarea .icon {
+    right: 40px;
+    top: 25px;
+    bottom: auto;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.nice-select::before {
+    content: '\f063';
+    right: 30px;
+    left: unset;
+    top: 50%;
+}
+.nice-select .option.disabled {
+    background-color: transparent;
+    color: #999;
+    cursor: default;
+    text-align: right;
+}
+.nice-select .list li {
+    line-height: 35px;
+    color: #a3a3a3;
+    text-align: right;
+}
+.current{
+    text-align: right;
+    padding-inline-start: 30px;
+}
+.input-group input, .input-group select, .input-group textarea, .input-group select {
+    padding-right: 80px;
+}
+.input-group .icon {
+    position: absolute;
+    right: 40px;
+    left: unset;
+    bottom: 35px;
+}
+.sidebar .widget .widget-title {
+    position: relative;
+    padding-left: 0;
+    padding-right: 30px;
+}
+.sidebar .widget .widget-title::before {
+    position: absolute;
+    right: 0;
+    left: unset;
+    top: 0;
+}
+.team-section .team-loop .member-box .member-info {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    left: unset;
+    z-index: 2;
+}
+.next-post .fa-arrow-right:before {
+    content: "\f060";
+}
+.prev-post .fa-arrow-left:before {
+    content: "\f061";
+}
+.offcanvas-wrapper {
+    position: fixed;
+    width: 450px;
+    top: 0;
+    min-height: 100vh;
+    right: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    margin-right: -450px;
+}
+
+.offcanvas-wrapper.show-offcanvas {
+    margin-right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.offcanvas-wrapper .offcanvas-widget a.offcanvas-close {
+    position: absolute;
+    left: 30px;
+    right: unset;
+    top: 30px;
+    font-size: 28px;
+    color: #53a3d6;
+}
