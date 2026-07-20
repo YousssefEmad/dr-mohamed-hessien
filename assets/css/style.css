@@ -46,6 +46,7 @@ body {
     font-size: 14px;
     line-height: 1.6;
     background-color: #001926;
+    direction: rtl;
 }
 
 * {
@@ -3121,7 +3122,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
     background-color: #0F3041;
     padding: 20px 40px;
     z-index: 2;
-    transform: translateX(-50%);
+    transform: translateX(50%);
 }
 
 @media (max-width: 575px) {

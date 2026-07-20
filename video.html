@@ -45,264 +45,384 @@
 
   <!-- Follow Circle -->
 
-    <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-    <!--====== PRELOader ======-->
-        <div class="preloader">
+     
+         <div class="preloader">
+      <img class="logo-preloder" src="assets/img/logo.png" alt="Logo">
       <img src="assets/img/preloader.svg" alt="preloader">
     </div>
     <!-- Backtotop start -->
       <div id="scroll-percentage">
-          <span id="scroll-percentage-value" data-default-color="#0f3041" data-scroll-color="#53a3d6"></span>
-      </div>
+      <span id="scroll-percentage-value" data-default-color="#0f3041"
+        data-scroll-color="#53a3d6"></span>
+    </div>
 <!-- Backtotop end -->
 
     <!--====== HEADER START ======-->
     <header class="header-three header-absolute sticky-header sigma-header">
+
+      <!-- Header Top -->
       <div class="header-top">
         <div class="container-fluid container-custom-three">
           <div class="d-md-flex align-items-center justify-content-between">
-            <a href="#">
-              Need Help? Call 1234 567 890
+
+            <a href="tel:+201005331098">
+              <i class="fal fa-phone"></i>
+              <span data-i18n="call_us">اتصل بنا: +20 10 05331098</span>
             </a>
+
             <ul class="header-top-info">
               <li>
-                <i class="fal fa-Clock"> </i>
-                Mon - Sat 9.00 - 18.00
+                <i class="fal fa-map-marker-alt"></i>
+                <span data-i18n="address">شارع الملك فيصل الرئيسي، محطة الطالبية، بجوار معمل البرج، الجيزة</span>
               </li>
               <li>
-                <i class="fal fa-Clock"> </i>
-                Mon - Sat 9.00 - 18.00
+                <i class="fal fa-clock"></i>
+                <span data-i18n="open_always">مفتوح دائمًا</span>
+              </li>
+              <li>
+                <!-- Language toggle button: switches AR <-> EN and persists the choice in localStorage -->
+                <button type="button" id="langToggleBtn" data-lang-toggle
+                  data-i18n="lang_switch_label" class="lang-switch-btn">
+                  English
+                </button>
               </li>
             </ul>
+
           </div>
         </div>
       </div>
+
+      <!-- Main Header -->
       <div class="main-menu-area sticky-header">
         <div class="container-fluid container-custom-three">
-          <div class="nav-container d-flex align-items-center justify-content-between">
-            <!-- Site Logo -->
+          <div
+            class="nav-container d-flex align-items-center justify-content-between"
+            id="nav-container">
+
+            <!-- Logo -->
             <div class="site-logo site-logo-text">
               <a href="index.html">
-               <img src="assets/img/logo.png" alt="">
+                <img src="assets/img/logo.png" alt="د. محمد حسين">
               </a>
             </div>
-            <!-- Main Menu -->
-            <div class="nav-menu d-lg-flex align-items-center justify-content-between">
-              <!-- Navbar Close Icon -->
+
+            <!-- Navigation -->
+            <div
+              class="nav-menu d-lg-flex align-items-center justify-content-between">
+
+              <!-- Navbar Close -->
               <div class="navbar-close">
-                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                <div class="cross-wrap">
+                  <span class="top"></span>
+                  <span class="bottom"></span>
+                </div>
               </div>
-              <!-- Mneu Items -->
+
+              <!-- Menu -->
               <div class="sigma-header-nav">
                 <div class="container">
                   <div class="sigma-header-nav-inner">
+
                     <nav>
                       <ul class="sigma-main-menu">
+
                         <li class="menu-item">
-                          <a href="index.html">
-                            Home
-                          </a>
+                          <a href="index.html" data-i18n="nav_home">الرئيسية</a>
                         </li>
+
                         <li class="menu-item">
-                          <a href="about.html">
-                          About Us
-                          </a>
+                          <a href="about.html" data-i18n="nav_about">من نحن</a>
                         </li>
+
                         <li class="menu-item menu-item-has-children">
-                          <a href="service-1.html">
-                          Service
-                          </a>
+                          <a href="services.html" data-i18n="nav_services">الخدمات الطبية</a>
+
                           <ul class="sub-menu">
-                            <li class="menu-item"> <a href="service-detail.html">Eye emergencies</a>
+                            <li class="menu-item">
+                              <a href="service-detail.html" data-i18n="nav_service_1">جراحات الشبكية
+                                الدقيقة والمعقدة</a>
                             </li>
-                            <li class="menu-item"> <a href="service-detail.html">LASIK unit</a>
+
+                            <li class="menu-item">
+                              <a href="service-detail.html" data-i18n="nav_service_2">جراحات زراعة
+                                القرنية</a>
                             </li>
-                            <li class="menu-item"> <a href="service-detail.html">Refractive unit</a>
+
+                            <li class="menu-item">
+                              <a href="service-detail.html" data-i18n="nav_service_3">الحقن داخل العين
+                                وعلاجات الليزر</a>
+                            </li>
+
+                            <li class="menu-item">
+                              <a href="service-detail.html" data-i18n="nav_service_4">جراحات تصحيح الإبصار
+                                بالليزر</a>
+                            </li>
+
+                            <li class="menu-item">
+                              <a href="service-detail.html" data-i18n="nav_service_5">جراحات إزالة المياه
+                                البيضاء</a>
                             </li>
                           </ul>
                         </li>
-                        <li class="menu-item">
-                            <a href="team.html">
-                            Teams
-                            </a>
-                          </li>
-                          <li class="menu-item menu-item-has-children">
-                            <a>
-                            Media
-                            </a>
-                            <ul class="sub-menu">
-                              <li class="menu-item"> <a href="gallery.html">Gallery</a>
-                              </li>
-                              <li class="menu-item"> <a href="video.html">Video</a>
-                              </li>
-                            </ul>
-                          </li>
-                        <li class="menu-item">
-                          <a href="blog-grid.html">
-                            Blog
-                          </a>
+
+
+                        <li class="menu-item menu-item-has-children">
+                          <a href="#" data-i18n="nav_media">الميديا</a>
+
+                          <ul class="sub-menu">
+                            <li class="menu-item">
+                              <a href="gallery.html" data-i18n="nav_gallery">معرض الصور</a>
+                            </li>
+
+                            <li class="menu-item">
+                              <a href="videos.html" data-i18n="nav_videos">الفيديوهات</a>
+                            </li>
+                          </ul>
                         </li>
+
                         <li class="menu-item">
-                          <a href="contact.html">
-                            Contact
-                          </a>
+                          <a href="blog.html" data-i18n="nav_blog">المدونة</a>
                         </li>
+
+                        <li class="menu-item">
+                          <a href="contact.html" data-i18n="nav_contact">تواصل معنا</a>
+                        </li>
+
                       </ul>
                     </nav>
+
                   </div>
                 </div>
               </div>
+
             </div>
-            <!-- navbar right content -->
+
+            <!-- Right Buttons -->
             <div class="menu-right-buttons">
-              <!-- Off canvas Toggle -->
+
               <div class="toggle">
-                <a href="#" id="offCanvasBtn"><i class="fal fa-bars"></i></a>
+                <a href="#" id="offCanvasBtn">
+                  <i class="fal fa-bars"></i>
+                </a>
               </div>
-              <!-- Navbar Toggler -->
+
               <div class="navbar-toggler">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
+
             </div>
+
           </div>
         </div>
       </div>
-      <!-- Mobile Header Start -->
-        <div class="sigma-mobile-header">
-          <div class="container">
-            <div class="sigma-mobile-header-inner">
-              <!-- Site Logo -->
-              <div class="site-logo site-logo-text">
-                <a href="index.html">
-                  <img src="assets/img/logo.png" alt="">
-                 </a>
-              </div>
-              <div class="sigma-hamburger-menu">
-                <div class="sigma-menu-btn"> <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+
+      <!-- Mobile Header -->
+      <div class="sigma-mobile-header">
+        <div class="container">
+          <div class="sigma-mobile-header-inner">
+
+            <div class="site-logo site-logo-text">
+              <a href="index.html">
+                <img src="assets/img/logo.png" alt="د. محمد حسين">
+              </a>
+            </div>
+
+            <div class="sigma-hamburger-menu">
+              <div class="sigma-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
             </div>
+
           </div>
         </div>
-        <!-- Mobile Header End -->
-        <!-- Mobile Menu Start -->
-        <aside class="sigma-mobile-menu">
-          <ul class="sigma-main-menu">
-            <li class="menu-item">
-              <a href="index.html">
-                Home
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="about.html">
-              About Us
-              </a>
-            </li>
-            <li class="menu-item menu-item-has-children">
-              <a href="service-1.html">
-              Service
-              </a>
-              <ul class="sub-menu">
-                <li class="menu-item"> <a href="service-detail.html">Eye emergencies</a>
-                </li>
-                <li class="menu-item"> <a href="service-detail.html">LASIK unit</a>
-                </li>
-                <li class="menu-item"> <a href="service-detail.html">Refractive unit</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-                <a href="team.html">
-                Teams
-                </a>
+      </div>
+
+      <!-- Mobile Menu -->
+      <aside class="sigma-mobile-menu">
+        <img class="sigma-logo mt-5" src="assets/img/logo.png" alt="د. محمد حسين">
+        <ul class="sigma-main-menu">
+
+          <li class="menu-item">
+            <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+          </li>
+
+          <li class="menu-item">
+            <a href="about.html" data-i18n="nav_about">من نحن</a>
+          </li>
+
+          <li class="menu-item menu-item-has-children">
+            <a href="services.html" data-i18n="nav_services">الخدمات الطبية</a>
+
+            <ul class="sub-menu">
+
+              <li class="menu-item">
+                <a href="service-detail.html" data-i18n="nav_service_1">جراحات الشبكية الدقيقة
+                  والمعقدة</a>
               </li>
-              <li class="menu-item menu-item-has-children">
-                <a>
-                Media
-                </a>
-                <ul class="sub-menu">
-                  <li class="menu-item"> <a href="gallery.html">Gallery</a>
-                  </li>
-                  <li class="menu-item"> <a href="video.html">Video</a>
-                  </li>
-                </ul>
+
+              <li class="menu-item">
+                <a href="service-detail.html" data-i18n="nav_service_2">جراحات زراعة القرنية</a>
               </li>
-            <li class="menu-item">
-              <a href="blog-grid.html">
-                Blog
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="contact.html">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </aside>
-        <!-- Mobile Menu End -->
+
+              <li class="menu-item">
+                <a href="service-detail.html" data-i18n="nav_service_3">الحقن داخل العين وعلاجات
+                  الليزر</a>
+              </li>
+
+              <li class="menu-item">
+                <a href="service-detail.html" data-i18n="nav_service_4">جراحات تصحيح الإبصار بالليزر</a>
+              </li>
+
+              <li class="menu-item">
+                <a href="service-detail.html" data-i18n="nav_service_5">جراحات إزالة المياه البيضاء</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-item">
+            <a href="doctor.html" data-i18n="nav_doctor">الدكتور</a>
+          </li>
+
+          <li class="menu-item menu-item-has-children">
+
+            <a href="#" data-i18n="nav_media">الميديا</a>
+
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="gallery.html" data-i18n="nav_gallery">معرض الصور</a>
+              </li>
+
+              <li class="menu-item">
+                <a href="videos.html" data-i18n="nav_videos">الفيديوهات</a>
+              </li>
+            </ul>
+
+          </li>
+
+          <li class="menu-item">
+            <a href="blog.html" data-i18n="nav_blog">المدونة</a>
+          </li>
+
+          <li class="menu-item">
+            <a href="contact.html" data-i18n="nav_contact">تواصل معنا</a>
+          </li>
+
+        </ul>
+
+      </aside>
+
     </header>
     <!--====== HEADER PART END ======-->
     <!--====== OFF CANVAS START ======-->
     <div class="offcanvas-wrapper">
       <div class="offcanvas-overly"></div>
+
       <div class="offcanvas-widget">
+
         <div class="offcanvas-widget_top">
-          <a href="#" class="offcanvas-close"><i class="fal fa-times"></i></a>
-          <img src="assets/img/logo.png" alt="">
+          <a href="#" class="offcanvas-close">
+            <i class="fal fa-times"></i>
+          </a>
+
+          <img src="assets/img/logo.png" alt="د. محمد حسين">
         </div>
 
         <!-- About Widget -->
         <div class="widget about-widget">
-          <h5 class="widget-title">About us</h5>
-          <p>Dr Mohamed Hessien Center is one of Cairo’s most advanced- day full-service facilities providing
-            comprehensive diagnostic and surgical ophthalmology procedures.</p>
+          <h5 class="widget-title" data-i18n="offcanvas_about_title">من نحن</h5>
+
+          <p data-i18n="offcanvas_about_p1">
+            في عيادات الدكتور محمد حسين، نؤمن أن الحفاظ على صحة العين هو الحفاظ
+            على جودة الحياة نفسها، لذلك نضع خبرتنا وإمكانياتنا الطبية في خدمة كل
+            مريض للحصول على أفضل رعاية ممكنة.
+          </p>
+
+          <p data-i18n="offcanvas_about_p2">
+            يقود الفريق الطبي الدكتور محمد حسين، استشاري جراحات الشبكية والليزر،
+            وممتحن بالكلية الملكية البريطانية لجراحات العيون بجلاسكو، وزميل
+            الكلية الملكية البريطانية لجراحات العيون بلندن وإدنبرة.
+          </p>
         </div>
-        <!-- Social Link -->
+
+        <!-- Contact Widget -->
         <div class="widget social-link">
-          <h5 class="widget-title">Contact with us</h5>
+
+          <h5 class="widget-title" data-i18n="offcanvas_contact_title">تواصل معنا</h5>
+
           <div class="Contact-offcanvas">
-            <h5 class="widget-title-2">Call Us : <a href="tel:+01000015004">01000015004 /</a>
-              <a href="tel:+01000020211">01000020211</a></h5>
+            <h5 class="widget-title-2">
+              <i class="fal fa-phone"></i>
+              <span data-i18n="offcanvas_phone_label">الهاتف :</span>
+              <a href="tel:+201005331098">+20 10 05331098</a>
+            </h5>
           </div>
+
           <div class="Contact-offcanvas">
-            <h5 class="widget-title-2">E-mail : <a href="mailto:info@eyecare-center.com">info@eyecare-center.com</a>
-              </h5>
+            <h5 class="widget-title-2">
+              <i class="fab fa-whatsapp"></i>
+              <span data-i18n="offcanvas_whatsapp_label">واتساب :</span>
+              <a href="https://wa.me/201005331098" target="_blank">
+                +20 10 05331098
+              </a>
+            </h5>
           </div>
+
           <div class="Contact-offcanvas">
-            <h5 class="widget-title-2">Address : <a href="#">1 Dimashk St., Maadi - Cairo</a>
-              </h5>
+            <h5 class="widget-title-2">
+              <i class="fal fa-map-marker-alt"></i>
+              <span data-i18n="offcanvas_address_label">العنوان :</span>
+              <a href="#" data-i18n="address">
+                شارع الملك فيصل الرئيسي، محطة الطالبية، بجوار معمل البرج، الجيزة
+              </a>
+            </h5>
           </div>
+
           <div class="Contact-offcanvas">
-            <h5 class="widget-title-2">Dr Mohamed Hessien : Sat.-Thu. 9:00am - 22:00pm
-              </h5>
+            <h5 class="widget-title-2">
+              <i class="fal fa-clock"></i>
+              <span data-i18n="offcanvas_hours_label">ساعات العمل :</span>
+              <span data-i18n="open_always">مفتوح دائمًا</span>
+            </h5>
           </div>
-          <div class="Contact-offcanvas">
-            <h5 class="widget-title-2">Eye Scan : Sat.-Thu. 9:00am - 21:00pm
-              </h5>
-          </div>
-          <a href="" class="mt-15 mb-4 img-play-offca"><img src="assets/img/btn_download_google_play.png.webp" alt=""></a>
+
           <ul>
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+            <li>
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
             </li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a>
+
+            <li>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
             </li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a>
+
+            <li>
+              <a href="#">
+                <i class="fab fa-youtube"></i>
+              </a>
             </li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li><a href="#"><i class="fab fa-google"></i></a>
+
+            <li>
+              <a href="#">
+                <i class="fab fa-tiktok"></i>
+              </a>
             </li>
           </ul>
+
         </div>
+
       </div>
     </div>
     <!--====== OFF CANVAS END ======-->
     <!--====== BREADCRUMB PART START ======-->
-    <section class="breadcrumb-area" style="background-image: url(assets/img/banner/04.webp);">
+    <section class="breadcrumb-area" style="background-image: url(assets/img/banner-1.jpg);">
         <div class="container">
             <div class="breadcrumb-text">
                 <span>Eya Care Center</span>
@@ -423,128 +543,7 @@
     <!--====== Back to Top ======-->
  
     <!--====== FOOTER PART START ======-->
-    <footer class="footer-two">
-      <div class="footer-widget-area pt-100 pb-50">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <!-- Site Info Widget -->
-              <div class="widget site-info-widget mb-50">
-                <div class="site-logo footer-logo site-logo-text mb-20">
-                    <a href="index.html">
-                      <img src="assets/img/logo.png" alt="">
-                    </a>
-                  </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed doing eius mod
-                  quis nostrud exercitat ion ullamco laboris nisi.
-                </p>
-                <div class="social-links mt-40">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-                <a href=""><img src="assets/img/btn_download_google_play.png.webp" class="mt-20" alt=""></a>
-              </div>
-            </div>
-            <div class="col-lg-3 mb-15">
-              <!-- Nav Widget -->
-              <div class="widget nav-widget mb-50">
-                <div>
-                  <h4 class="widget-title text-center">Helpful Links</h4>
-                  <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About US</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Teams</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Board Members</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <!-- Contact Widget -->
-              <div class="widget contact-widget mb-50">
-                <h4 class="widget-title">Contact Us.</h4>
-                <div class="contact-lists">
-                  <div class="contact-box">
-                    <div class="icon">
-                      <i class="flaticon-phone"></i>
-                    </div>
-                    <div class="desc">
-                      <h6 class="title">Phone Number</h6>
-                      <a href="tel:+01000020211"> 0100 002 0211</a>
-                    </div>
-                  </div>
-                  <div class="contact-box">
-                    <div class="icon">
-                      <i class="flaticon-message"></i>
-                    </div>
-                    <div class="desc">
-                      <h6 class="title">Email Address</h6>
-                      <a href="#">info@webmail.com</a>
-                    </div>
-                  </div>
-                  <div class="contact-box">
-                    <div class="icon">
-                      <i class="flaticon-location-pin"></i>
-                    </div>
-                    <div class="desc">
-                      <h6 class="title">Clinic Address</h6>
-                      <a href="">1 Dimashk St., Maadi - Cairo</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 mb-15">
-              <!-- Nav Widget -->
-              <div class="widget nav-widget mb-50">
-                <div>
-                  <h4 class="widget-title text-center">Services</h4>
-                  <ul class="nav-widget-2">
-                    <li><a href="#">Eye Examination</a></li>
-                    <li><a href="#">Glaucoma Testing</a></li>
-                    <li><a href="#">Cataract Surgery</a></li>
-                    <li><a href="#">Laser Eye Surgery</a></li>
-                    <li><a href="#">Retina Care</a></li>
-                    <li><a href="#">Pediatric Dr Mohamed Hessien</a></li>
-                    <li><a href="#">Contact Lens Fitting</a></li>
-                    <li><a href="#">Optical Coherence Tomography (OCT)</a></li>
-                    <li><a href="#">Dry Eye Treatment</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="copyright-area pt-30 pb-30">
-              <div class="container">
-                <div class="row align-items-center">
-                  <div class="col-lg-6 col-md-5 order-2 order-md-1">
-                    <p class="copyright-text copyright-two">Copyright By@ Reserved Dr Mohamed Hessien Center, Developed and Designed by<a href="#"> BeGroup</a> - 2024</p>
-                  </div>
-                  <div class="col-lg-6 col-md-7 order-1 order-md-2">
-                    <div class="footer-menu text-center text-md-end">
-                      <ul>
-                        <li><a href="#">Teams</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </footer>
+    <div id="footer"></div>
     <!--====== FOOTER PART END ======-->
   <!--====== Modal Popup End ======-->
   <!--====== jquery js ======-->
