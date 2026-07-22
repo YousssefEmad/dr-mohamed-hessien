@@ -182,13 +182,13 @@
                             </li>
 
                             <li class="menu-item">
-                              <a href="videos.html" data-i18n="nav_videos">الفيديوهات</a>
+                              <a href="video.html" data-i18n="nav_videos">الفيديوهات</a>
                             </li>
                           </ul>
                         </li>
 
                         <li class="menu-item">
-                          <a href="blog.html" data-i18n="nav_blog">المدونة</a>
+                          <a href="blog-grid.html" data-i18n="nav_blog">المدونة</a>
                         </li>
 
                         <li class="menu-item">
@@ -305,14 +305,14 @@
               </li>
 
               <li class="menu-item">
-                <a href="videos.html" data-i18n="nav_videos">الفيديوهات</a>
+                <a href="video.html" data-i18n="nav_videos">الفيديوهات</a>
               </li>
             </ul>
 
           </li>
 
           <li class="menu-item">
-            <a href="blog.html" data-i18n="nav_blog">المدونة</a>
+            <a href="blog-grid.html" data-i18n="nav_blog">المدونة</a>
           </li>
 
           <li class="menu-item">
@@ -595,7 +595,7 @@
                 <div class="video-wrap video-wrap-two mb-small"
                     style="background-image:url(assets/img/);">
 
-                    <a href="https://www.youtube.com/embed/VIDEO_ID"
+                    <a href="assets/img/vedio.mp4"
                         class="popup-video">
 
                         <i class="fas fa-play"></i>
@@ -612,7 +612,7 @@
     </div>
 
 
-    <div class="pattern-wrap">
+    <div class="pattern-wrap" style="background-image: url('assets/img/about.jpg');">
         <div class="pattern"></div>
     </div>
 
@@ -623,9 +623,10 @@
     <!--====== Back to Top ======-->
  
     <!--====== FOOTER PART START ======-->
-    <div id="footer"></div>
-    <!--====== FOOTER PART END ======-->
-    <!--====== jquery js ======-->
+<div id="footer"></div>
+
+    <!--====== FOOTER END ======-->
+
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <!--====== Bootstrap js ======-->
@@ -647,14 +648,27 @@
     <script src="assets/js/bootstrap-datepicker.js"></script>
     <!--====== Ion Rangeslider ======-->
     <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <!--====== Jquery Countdown ======-->
+    <script src="assets/js/jquery.countdown.min.js"></script>
     <!--====== Wow JS ======-->
     <script src="assets/js/wow.min.js"></script>
     <!--====== Mapbox Map ======-->
     <script src="assets/js/leaflet.js"></script>
     <script src="assets/js/mapbox-gl.min.js"></script>
-    <script src="assets/js/map.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
+    <!--====== Site translations (AR / EN) - must load BEFORE lang.js ======-->
+    <script src="assets/data/site-data.js"></script>
+    <!--====== Language switcher (AR / EN) - reads window.SITE_I18N and persists choice in localStorage ======-->
+    <script src="assets/js/lang.js"></script>
+    <script>
+      $("#footer").load("footer.html");
+    Fancybox.bind("[data-fancybox]", {
+            // Your custom options
+        });
+  </script>
 </body>
 
 </html>
