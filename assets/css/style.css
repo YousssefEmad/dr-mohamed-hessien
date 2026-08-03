@@ -214,6 +214,7 @@ select {
     height: 70px;
     padding-inline-start: 50px;
     line-height: 70px;
+    text-align: start !important;
 }
 .contact-form .nice-select {
     background-color: #001926;

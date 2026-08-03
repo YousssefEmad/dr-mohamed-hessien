@@ -1,0 +1,25 @@
+/* Language toggle button */
+.lang-switch-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lang-switch-btn:hover {
+  background: #53a3d6;
+  border-color: #53a3d6;
+  color: #fff;
+}
+
+/* Optional: basic LTR tweaks when English is active.
+   The theme's CSS (style.css) is built RTL-first, so for a fully
+   mirrored layout in English you may eventually want a dedicated
+   ltr.css. This is just a safe minimal starting point. */
+body.lang-en {
+  text-align: left;
+}

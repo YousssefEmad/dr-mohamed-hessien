@@ -1,0 +1,25 @@
+/* Extra responsive polish for Next migration */
+
+@media (max-width: 991px) {
+  .vertical-text {
+    display: none !important;
+  }
+
+  .banner-area {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .room-box {
+    margin-bottom: 20px;
+  }
+
+  .condo-item {
+    margin-bottom: 16px;
+  }
+}
