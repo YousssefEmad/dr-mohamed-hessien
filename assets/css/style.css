@@ -3117,13 +3117,13 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
 }
 
 .breadcrumb-area .breadcrumb-text .breadcrumb-nav {
-   position: absolute;
-   inset-inline-start: 50%;
+    position: absolute;
+    inset-inline-start: 50%;
     bottom: -32px;
     background-color: #0F3041;
     padding: 20px 40px;
     z-index: 2;
-    transform: translateX(50%);
+    /* transform: translateX(50%); */
 }
 
 @media (max-width: 575px) {
@@ -5293,7 +5293,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
     -webkit-transition: all 0.4s ease-out 0s;
     transition: all 0.4s ease-out 0s;
     height: 100%;
-    text-align: right;
+    text-align: start;
     justify-content: end;
 }
 .blog-style-2 .blog-post:hover {

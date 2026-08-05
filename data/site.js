@@ -27,10 +27,11 @@ export const siteConfig = {
     longitude: 31.1805326,
   },
   social: {
-    facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-    youtube: "https://www.youtube.com/",
-    tiktok: "https://www.tiktok.com/",
+    facebook: "https://www.facebook.com/Dr.Mohamed.Hessien/",
+    // Add real profile URLs when provided — empty/placeholder values are hidden in the UI
+    instagram: "",
+    youtube: "",
+    tiktok: "",
   },
   videoBanner: "/img/vedio.mp4",
   doctorImage: "/img/doc-2.jpg",

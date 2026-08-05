@@ -8,6 +8,11 @@
   .banner-area {
     min-height: 420px;
   }
+
+  .sigma-mobile-header .sigma-mobile-header-inner {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -16,10 +21,16 @@
   }
 
   .room-box {
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
-  .condo-item {
-    margin-bottom: 16px;
+  .condo-item,
+  .case-card {
+    margin-bottom: 0;
+    min-height: 280px;
+  }
+
+  .image-type-section .room-items .row {
+    row-gap: 16px;
   }
 }

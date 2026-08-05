@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 /**
  * Loads jQuery + theme plugins once, then re-inits on route change.
+ * Menu / offcanvas are handled in React — skip jQuery binders for those.
  */
 export default function ClientPlugins() {
   const pathname = usePathname();
@@ -36,14 +37,13 @@ export default function ClientPlugins() {
 
       try {
         if (window.mirandaDoc && typeof window.mirandaDoc.init === "function") {
-          // Avoid double-binding: only run lighter pieces if already inited
           if (!window.__themeInited) {
+            // Disable jQuery menu/offcanvas — React owns these interactions
+            window.mirandaDoc.mianMenu = function noopMenu() {};
+            window.mirandaDoc.mainNavigation = function noopNav() {};
+            window.mirandaDoc.offCanvas = function noopOffcanvas() {};
             window.mirandaDoc.init();
             window.__themeInited = true;
-          } else {
-            if (typeof window.mirandaDoc.mianMenu === "function") {
-              // re-bind mobile menu for new DOM
-            }
           }
         }
       } catch (_) {

@@ -20,17 +20,17 @@ export default function HomeCases({ items = [], sections }) {
 
         <div className="row">
           {items.map((item) => (
-            <div key={item.id} className="col-lg-3 col-md-6">
+            <div key={item.id} className="col-lg-3 col-md-6 mb-30">
               <div
-                className="condo-item hotel-intro"
+                className="condo-item hotel-intro case-card"
                 style={{ backgroundImage: `url(${item.image})` }}
               >
-                <div className="title">
-                  <div className="display-on-hover">
-                    <a href={item.image} data-fancybox="cases">
-                      <i className="fa-solid fa-eye text-white" />
-                    </a>
-                  </div>
+                <div className="case-card__overlay">
+                  <h4>{pick(item, "title")}</h4>
+                  {pick(item, "caption") ? <p>{pick(item, "caption")}</p> : null}
+                  <a href={item.image} data-fancybox="cases" className="case-card__view">
+                    <i className="fa-solid fa-eye" />
+                  </a>
                 </div>
               </div>
             </div>

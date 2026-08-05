@@ -2,6 +2,7 @@
 
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ContactForm from "@/components/shared/ContactForm";
+import PhoneLink from "@/components/shared/PhoneLink";
 import { useLanguage } from "@/context/LanguageContext";
 import { siteConfig } from "@/data/site";
 import { uiLabels } from "@/data/navigation";
@@ -41,9 +42,9 @@ export default function ContactPageView({ page, services = [] }) {
                       <div className="desc">
                         <h4>{t(uiLabels, "phoneLabel")}</h4>
                         <p>
-                          <a href={`tel:${siteConfig.phone}`}>
+                          <PhoneLink href={`tel:${siteConfig.phone}`}>
                             {siteConfig.phoneDisplay}
-                          </a>
+                          </PhoneLink>
                         </p>
                       </div>
                     </div>
@@ -56,9 +57,9 @@ export default function ContactPageView({ page, services = [] }) {
                       <div className="desc">
                         <h4>{t(uiLabels, "whatsappLabel")}</h4>
                         <p>
-                          <a href={`https://wa.me/${siteConfig.whatsapp}`}>
+                          <PhoneLink href={`https://wa.me/${siteConfig.whatsapp}`}>
                             {siteConfig.phoneDisplay}
-                          </a>
+                          </PhoneLink>
                         </p>
                       </div>
                     </div>

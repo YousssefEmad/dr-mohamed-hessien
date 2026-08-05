@@ -16,10 +16,11 @@
   color: #fff;
 }
 
-/* Optional: basic LTR tweaks when English is active.
-   The theme's CSS (style.css) is built RTL-first, so for a fully
-   mirrored layout in English you may eventually want a dedicated
-   ltr.css. This is just a safe minimal starting point. */
+/* Direction is controlled via html[dir] + body.lang-* in custom.css */
 body.lang-en {
   text-align: left;
+}
+
+body.lang-ar {
+  text-align: right;
 }

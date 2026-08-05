@@ -1,23 +1,43 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import PhoneLink from "@/components/shared/PhoneLink";
+import SocialLinks from "@/components/shared/SocialLinks";
 import { siteConfig } from "@/data/site";
 import { aboutPage } from "@/data/pages";
 import { uiLabels } from "@/data/navigation";
 
-export default function OffCanvas() {
+export default function OffCanvas({ open = false, onClose }) {
   const { pick, t, lang } = useLanguage();
 
+  const handleClose = (e) => {
+    e?.preventDefault?.();
+    onClose?.();
+  };
+
   return (
-    <div className="offcanvas-wrapper">
-      <div className="offcanvas-overly" />
-      <div className="offcanvas-widget">
+    <div className={`offcanvas-wrapper${open ? " show-offcanvas" : ""}`}>
+      <div
+        className={`offcanvas-overly${open ? " show-overly" : ""}`}
+        onClick={handleClose}
+        aria-hidden={!open}
+      />
+      <div
+        className="offcanvas-widget"
+        role="dialog"
+        aria-modal="true"
+        aria-label={lang === "en" ? "Clinic contact info" : "معلومات التواصل"}
+      >
         <div className="offcanvas-widget_top">
-          <a href="#" className="offcanvas-close" onClick={(e) => e.preventDefault()}>
+          <button
+            type="button"
+            className="offcanvas-close"
+            onClick={handleClose}
+            aria-label={lang === "en" ? "Close" : "إغلاق"}
+          >
             <i className="fal fa-times" />
-          </a>
+          </button>
           <Image
             src={siteConfig.logo}
             alt={siteConfig.shortNameAr}
@@ -29,76 +49,72 @@ export default function OffCanvas() {
         <div className="widget about-widget">
           <h5 className="widget-title">{pick(aboutPage, "title")}</h5>
           <p>{pick(aboutPage, "intro")}</p>
-          <p>{pick(aboutPage, "doctorLead")}</p>
         </div>
 
-        <div className="widget social-link">
+        <div className="widget social-link offcanvas-contact-block">
           <h5 className="widget-title">{t(uiLabels, "contactUs")}</h5>
 
-          <div className="Contact-offcanvas">
-            <h5 className="widget-title-2">
+          <div className="offcanvas-contact-item">
+            <div className="offcanvas-contact-icon">
               <i className="fal fa-phone" />
-              <span>{t(uiLabels, "phoneLabel")} :</span>{" "}
-              <a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a>
-            </h5>
+            </div>
+            <div className="offcanvas-contact-body">
+              <span className="offcanvas-contact-label">
+                {t(uiLabels, "phoneLabel")}
+              </span>
+              <PhoneLink href={`tel:${siteConfig.phone}`}>
+                {siteConfig.phoneDisplay}
+              </PhoneLink>
+            </div>
           </div>
 
-          <div className="Contact-offcanvas">
-            <h5 className="widget-title-2">
+          <div className="offcanvas-contact-item">
+            <div className="offcanvas-contact-icon">
               <i className="fab fa-whatsapp" />
-              <span>{t(uiLabels, "whatsappLabel")} :</span>{" "}
-              <a
+            </div>
+            <div className="offcanvas-contact-body">
+              <span className="offcanvas-contact-label">
+                {t(uiLabels, "whatsappLabel")}
+              </span>
+              <PhoneLink
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 {siteConfig.phoneDisplay}
-              </a>
-            </h5>
+              </PhoneLink>
+            </div>
           </div>
 
-          <div className="Contact-offcanvas">
-            <h5 className="widget-title-2">
+          <div className="offcanvas-contact-item">
+            <div className="offcanvas-contact-icon">
               <i className="fal fa-map-marker-alt" />
-              <span>{t(uiLabels, "addressLabel")} :</span>{" "}
+            </div>
+            <div className="offcanvas-contact-body">
+              <span className="offcanvas-contact-label">
+                {t(uiLabels, "addressLabel")}
+              </span>
               <span>
                 {lang === "en" ? siteConfig.addressEn : siteConfig.addressAr}
               </span>
-            </h5>
+            </div>
           </div>
 
-          <div className="Contact-offcanvas">
-            <h5 className="widget-title-2">
+          <div className="offcanvas-contact-item">
+            <div className="offcanvas-contact-icon">
               <i className="fal fa-clock" />
-              <span>{t(uiLabels, "hoursLabel")} :</span>{" "}
+            </div>
+            <div className="offcanvas-contact-body">
+              <span className="offcanvas-contact-label">
+                {t(uiLabels, "hoursLabel")}
+              </span>
               <span>
                 {lang === "en" ? siteConfig.hoursEn : siteConfig.hoursAr}
               </span>
-            </h5>
+            </div>
           </div>
 
-          <ul>
-            <li>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer">
-                <i className="fab fa-facebook-f" />
-              </a>
-            </li>
-            <li>
-              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer">
-                <i className="fab fa-instagram" />
-              </a>
-            </li>
-            <li>
-              <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer">
-                <i className="fab fa-youtube" />
-              </a>
-            </li>
-            <li>
-              <a href={siteConfig.social.tiktok} target="_blank" rel="noreferrer">
-                <i className="fab fa-tiktok" />
-              </a>
-            </li>
-          </ul>
+          <SocialLinks asList className="offcanvas-social-list" />
         </div>
       </div>
     </div>

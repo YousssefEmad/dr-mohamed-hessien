@@ -28,9 +28,9 @@ export const aboutPage = {
   visionTitleAr: "رؤيتنا",
   visionTitleEn: "Our Vision",
   visionAr:
-    "أن نكون من أبرز المراكز المتخصصة في طب وجراحات الشبكية والعيون، من خلال تقديم رعاية طبية متقدمة تعتمد على أحدث التقنيات والمعايير العالمية، مع الحرص على تحقيق أفضل النتائج العلاجية لكل مريض.",
+    "نطمح إلى أن نكون الخيار الأول في مجال طب وجراحات الشبكية والعيون، عبر توفير رعاية صحية متطورة تعتمد على الابتكار، والخبرة الطبية، وأحدث التقنيات، مع التركيز على تقديم تجربة علاجية متميزة ونتائج تلبي أعلى معايير الجودة.",
   visionEn:
-    "To be among the leading specialized centers in retina and ophthalmology through advanced medical care based on the latest technologies and global standards.",
+    "We aspire to be the first choice in retina and eye medicine and surgery by providing advanced healthcare based on innovation, medical expertise, and the latest technologies, with a focus on delivering an exceptional treatment experience and results that meet the highest quality standards.",
   goalsTitleAr: "ما نسعى لتحقيقه",
   goalsTitleEn: "What We Strive For",
   goalsAr: [

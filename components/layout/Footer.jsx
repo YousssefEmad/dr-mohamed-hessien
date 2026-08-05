@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import PhoneLink from "@/components/shared/PhoneLink";
+import SocialLinks from "@/components/shared/SocialLinks";
 import { siteConfig } from "@/data/site";
 import { footerQuickLinks, uiLabels } from "@/data/navigation";
 import { aboutPage } from "@/data/pages";
@@ -28,20 +30,7 @@ export default function Footer({ services = [] }) {
                   </Link>
                 </div>
                 <p>{pick(aboutPage, "commitment")}</p>
-                <div className="social-links mt-40">
-                  <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer">
-                    <i className="fab fa-facebook-f" />
-                  </a>
-                  <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer">
-                    <i className="fab fa-instagram" />
-                  </a>
-                  <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer">
-                    <i className="fab fa-youtube" />
-                  </a>
-                  <a href={siteConfig.social.tiktok} target="_blank" rel="noreferrer">
-                    <i className="fab fa-tiktok" />
-                  </a>
-                </div>
+                <SocialLinks className="social-links mt-40" />
               </div>
             </div>
 
@@ -87,9 +76,9 @@ export default function Footer({ services = [] }) {
                     </div>
                     <div className="desc">
                       <h6 className="title">{t(uiLabels, "phoneLabel")}</h6>
-                      <a href={`tel:${siteConfig.phone}`}>
+                      <PhoneLink href={`tel:${siteConfig.phone}`}>
                         {siteConfig.phoneDisplay}
-                      </a>
+                      </PhoneLink>
                     </div>
                   </div>
 
@@ -99,9 +88,9 @@ export default function Footer({ services = [] }) {
                     </div>
                     <div className="desc">
                       <h6 className="title">{t(uiLabels, "whatsappLabel")}</h6>
-                      <a href={`https://wa.me/${siteConfig.whatsapp}`}>
+                      <PhoneLink href={`https://wa.me/${siteConfig.whatsapp}`}>
                         {siteConfig.phoneDisplay}
-                      </a>
+                      </PhoneLink>
                     </div>
                   </div>
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Breadcrumb from "@/components/layout/Breadcrumb";
+import VideoPopupButton from "@/components/shared/VideoPopupButton";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function VideosPageView({ videos = [], page }) {
@@ -21,22 +22,16 @@ export default function VideosPageView({ videos = [], page }) {
           <div className="row">
             {videos.map((video) => (
               <div key={video.id} className="col-md-6 col-lg-4 mb-30">
-                <div className="p-4 border h-100">
-                  <h4 className="mb-3">{pick(video, "title")}</h4>
-                  <a
-                    href={video.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="main-btn btn-filled"
-                  >
-                    {lang === "en" ? "Watch on Facebook" : "مشاهدة على فيسبوك"}
-                  </a>
+                <div className="video-card h-100">
+                  <VideoPopupButton
+                    url={video.url}
+                    title={pick(video, "title")}
+                  />
+                  <h4 className="mt-3 mb-2">{pick(video, "title")}</h4>
                   {video.serviceSlug ? (
-                    <div className="mt-3">
-                      <Link href={`/services/${video.serviceSlug}/`}>
-                        {lang === "en" ? "Related service" : "الخدمة المرتبطة"}
-                      </Link>
-                    </div>
+                    <Link href={`/services/${video.serviceSlug}/`}>
+                      {lang === "en" ? "Related service" : "الخدمة المرتبطة"}
+                    </Link>
                   ) : null}
                 </div>
               </div>

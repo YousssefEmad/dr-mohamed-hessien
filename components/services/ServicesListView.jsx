@@ -41,7 +41,7 @@ export default function ServicesListView({ services = [] }) {
           </div>
 
           <div className="room-items">
-            <div className="row align-items-center justify-content-center">
+            <div className="row justify-content-center">
               {services.map((service) => (
                 <div key={service.id} className="col-lg-6 col-md-6 col-12">
                   <div className="room-box">

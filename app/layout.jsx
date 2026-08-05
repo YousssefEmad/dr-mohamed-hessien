@@ -1,3 +1,4 @@
+import { Cairo } from "next/font/google";
 import "@/styles/globals.css";
 import Providers from "@/components/layout/Providers";
 import SiteShell from "@/components/layout/SiteShell";
@@ -5,6 +6,14 @@ import JsonLd from "@/components/seo/JsonLd";
 import { buildMetadata, organizationSchema, localBusinessSchema } from "@/lib/seo";
 import { siteSeo } from "@/data/site";
 import { getServices } from "@/lib/api/services";
+
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-cairo",
+  fallback: ["Tahoma", "Arial", "sans-serif"],
+});
 
 export const metadata = buildMetadata({
   ...siteSeo,
@@ -21,9 +30,25 @@ export default async function RootLayout({ children }) {
   const services = await getServices();
 
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html
+      lang="ar"
+      dir="rtl"
+      className={cairo.variable}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" href="/img/logo.png" type="image/png" />
+        {/* Fallback Cairo for legacy CSS — next/font is primary */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -44,7 +69,7 @@ export default async function RootLayout({ children }) {
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="stylesheet" href="/css/lang.css" />
       </head>
-      <body className="lang-ar" suppressHydrationWarning>
+      <body className={`lang-ar ${cairo.className}`} suppressHydrationWarning>
         <JsonLd data={[organizationSchema(), localBusinessSchema()]} />
         <Providers>
           <SiteShell services={services}>{children}</SiteShell>

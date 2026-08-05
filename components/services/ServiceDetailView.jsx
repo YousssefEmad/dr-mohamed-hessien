@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ContactForm from "@/components/shared/ContactForm";
+import VideoPopupButton from "@/components/shared/VideoPopupButton";
+import SocialLinks from "@/components/shared/SocialLinks";
 import { useLanguage } from "@/context/LanguageContext";
 import { siteConfig } from "@/data/site";
 import { uiLabels } from "@/data/navigation";
@@ -88,7 +90,7 @@ export default function ServiceDetailView({
                     <>
                       <div className="gap" />
                       <h3 className="subtitle">
-                        {lang === "en" ? "Key Benefits" : "لماذا تختار هذه الخدمة؟"}
+                        {lang === "en" ? "Service Features" : "مميزات الخدمة"}
                       </h3>
                       <ul className="list-icon">
                         {highlights.map((item) => (
@@ -135,17 +137,21 @@ export default function ServiceDetailView({
                       <h3 className="box-title">
                         {lang === "en" ? "Related Videos" : "فيديوهات مرتبطة"}
                       </h3>
-                      {service.videos.map((url) => (
-                        <a
-                          key={url}
-                          href={url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="d-block mb-2"
-                        >
-                          {url}
-                        </a>
-                      ))}
+                      <div className="row">
+                        {service.videos.map((url, index) => (
+                          <div key={url} className="col-sm-6 col-md-4 mb-20">
+                            <VideoPopupButton
+                              url={url}
+                              title={`${pick(service, "title")} - ${index + 1}`}
+                              label={
+                                lang === "en"
+                                  ? `Video ${index + 1}`
+                                  : `فيديو ${index + 1}`
+                              }
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ) : null}
                 </div>
@@ -210,28 +216,7 @@ export default function ServiceDetailView({
 
                 <div className="widget socail-widget mb-40">
                   <h5 className="widget-title">{t(uiLabels, "followUs")}</h5>
-                  <ul>
-                    <li>
-                      <a href={siteConfig.social.facebook}>
-                        <i className="fab fa-facebook-f" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={siteConfig.social.instagram}>
-                        <i className="fab fa-instagram" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={siteConfig.social.youtube}>
-                        <i className="fab fa-youtube" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href={siteConfig.social.tiktok}>
-                        <i className="fab fa-tiktok" />
-                      </a>
-                    </li>
-                  </ul>
+                  <SocialLinks asList />
                 </div>
               </div>
             </div>
