@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
 import { uiLabels } from "@/data/navigation";
 import { homeSections } from "@/data/pages";
 
@@ -23,11 +22,7 @@ export default function ServicesListView({ services = [] }) {
         ]}
       />
 
-      <section
-        className="image-type-section pt-70 pb-115 mt-35"
-        id="bg-none"
-        style={{ backgroundImage: `url(${siteConfig.breadcrumbBg})` }}
-      >
+      <section className="image-type-section pt-70 pb-115 mt-35" id="bg-none">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12">

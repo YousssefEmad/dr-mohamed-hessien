@@ -21,9 +21,13 @@ export const services = [
     heroAr: "احجز الآن – ابدأ خطوتك نحو علاج آمن ودقيق في عيادات دكتور محمد حسين",
     heroEn:
       "Book now – take a safe, precise step toward treatment at Dr. Mohamed Hessien Clinics",
-    image: "/img/serv-5.jpg",
+    image: "/img/service-retina-surgery.jpg",
     icon: "fal fa-eye",
-    gallery: ["/img/serv-5.jpg", "/img/cases-1.jpeg", "/img/cases-2.jpg"],
+    gallery: [
+      "/img/service-retina-surgery.jpg",
+      "/img/cases-1.jpeg",
+      "/img/cases-2.jpg",
+    ],
     highlightsAr: [
       "علاج انفصال الشبكية والنزيف داخل الجسم الزجاجي",
       "علاج الثقوب البقعية وأغشية الشبكية",
@@ -88,9 +92,9 @@ export const services = [
       "احجز الآن - ابدأ خطوتك في العلاج بشكل آمن ودقيق مع عيادات دكتور محمد حسين",
     heroEn:
       "Book now – begin safe, precise treatment with Dr. Mohamed Hessien Clinics",
-    image: "/img/serv-7.jpg",
+    image: "/img/service-corneal-transplant.jpg",
     icon: "fal fa-eye",
-    gallery: ["/img/serv-7.jpg"],
+    gallery: ["/img/service-corneal-transplant.jpg"],
     highlightsAr: [
       "علاج عتامات القرنية والقرنية المخروطية",
       "أحدث التقنيات الجراحية الدقيقة",
@@ -143,9 +147,9 @@ export const services = [
       "احجز الآن - ابدأ خطوتك في العلاج بشكل آمن ودقيق مع عيادات دكتور محمد حسين",
     heroEn:
       "Book now – begin safe, precise treatment with Dr. Mohamed Hessien Clinics",
-    image: "/img/serv-1.jpeg",
+    image: "/img/service-intravitreal-injection-laser.jpg",
     icon: "fal fa-syringe",
-    gallery: ["/img/serv-1.jpeg"],
+    gallery: ["/img/service-intravitreal-injection-laser.jpg"],
     highlightsAr: [
       "حقن لعلاج التنكس البقعي واعتلال الشبكية السكري",
       "ليزر لتمزقات الشبكية وبعض حالات الجلوكوما",
@@ -202,9 +206,9 @@ export const services = [
       "احجز الآن - ابدأ خطوتك نحو علاج آمن ودقيق في عيادات دكتور محمد حسين",
     heroEn:
       "Book now – take a safe, precise step at Dr. Mohamed Hessien Clinics",
-    image: "/img/serv-2.jpeg",
+    image: "/img/service-laser-vision-correction.jpg",
     icon: "fal fa-laser",
-    gallery: ["/img/serv-2.jpeg"],
+    gallery: ["/img/service-laser-vision-correction.jpg"],
     highlightsAr: [
       "الليزك والفيمتو ليزك والليزر السطحي",
       "تقييم شامل قبل اختيار التقنية المناسبة",
@@ -262,9 +266,9 @@ export const services = [
       "احجز الآن - ابدأ خطوتك نحو علاج آمن ودقيق في عيادات دكتور محمد حسين",
     heroEn:
       "Book now – take a safe, precise step at Dr. Mohamed Hessien Clinics",
-    image: "/img/serv-6.jpg",
+    image: "/img/service-cataract-surgery.jpg",
     icon: "fal fa-procedures",
-    gallery: ["/img/serv-6.jpg"],
+    gallery: ["/img/service-cataract-surgery.jpg"],
     highlightsAr: [
       "عدسات صناعية شفافة متطورة",
       "تقنيات دقيقة وسرعة في التعافي",
@@ -318,9 +322,9 @@ export const services = [
       "If you have high refractive error, or LASIK is not suitable for your eyes, lens implant surgery may be the ideal solution to restore clear vision and reduce dependence on glasses or contact lenses. This modern technique implants a high-precision lens inside the eye while fully preserving the natural lens, for excellent visual quality with high safety and accuracy.",
     heroAr: "رؤية أكثر وضوحًا… وحياة بدون قيود",
     heroEn: "Clearer vision… and a life without limits",
-    image: "/img/serv-3.jpeg",
+    image: "/img/service-lens-implant.jpg",
     icon: "fal fa-eye",
-    gallery: ["/img/serv-3.jpeg", "/img/serv-4.jpg"],
+    gallery: ["/img/service-lens-implant.jpg"],
     sections: [
       {
         titleAr: "لمن تناسب جراحات زراعة العدسات؟",
@@ -438,9 +442,9 @@ export const services = [
       "Strabismus is not only a cosmetic concern — it can affect vision quality, visual perception, and self-confidence. Modern eye surgery treats squint precisely and safely for functional and aesthetic results by adjusting eye muscle position to restore binocular alignment.",
     heroAr: "استعادة توازن العينين… ورؤية أكثر راحة وثقة",
     heroEn: "Restore eye alignment… for more comfortable, confident vision",
-    image: "/img/serv-4.jpg",
+    image: "/img/service-strabismus-surgery.jpg",
     icon: "fal fa-eye",
-    gallery: ["/img/serv-4.jpg"],
+    gallery: ["/img/service-strabismus-surgery.jpg"],
     sections: [
       {
         titleAr: "متى يكون علاج الحول ضروريًا؟",
@@ -523,9 +527,9 @@ export const services = [
       "Eyelid cosmetic surgery is a precise aesthetic procedure that removes excess skin, laxity and puffiness around the eyes for a more youthful look while preserving natural facial expression. In some cases it also improves the visual field when drooping lids obstruct sight.",
     heroAr: "استعادة حيوية العينين ومظهر أكثر شبابًا وتناسقًا",
     heroEn: "Restore eye vitality with a more youthful, balanced look",
-    image: "/img/doc-1.jpg",
+    image: "/img/service-eyelid-surgery.jpg",
     icon: "fal fa-eye",
-    gallery: ["/img/doc-1.jpg"],
+    gallery: ["/img/service-eyelid-surgery.jpg"],
     sections: [
       {
         titleAr: "متى تحتاج إلى جراحة تجميل الجفون؟",

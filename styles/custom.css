@@ -889,3 +889,66 @@ html[dir="rtl"] .floating-cta__text {
   inset-inline-start: auto !important;
 }
 
+/* Service / news images: never stretch across breakpoints */
+.news-details-box figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 3 / 2;
+  background: #0a1f2b;
+}
+
+.news-details-box figure img,
+.news-details-box figure > span,
+.news-details-box figure > span img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.single-popular-feed .feed-img {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.single-popular-feed .feed-img img,
+.single-popular-feed .feed-img > span,
+.single-popular-feed .feed-img > span img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-type-section .room-items .room-box .room-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Breadcrumb / services section banner: keep doctor's face visible */
+.breadcrumb-area {
+  background-size: cover;
+  background-position: 18% 30%;
+  background-repeat: no-repeat;
+}
+
+.image-type-section {
+  background-size: cover;
+  background-position: 18% 30%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .breadcrumb-area,
+  .image-type-section {
+    background-position: 12% 28% !important;
+  }
+}
+

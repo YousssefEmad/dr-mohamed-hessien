@@ -46,13 +46,15 @@ export default function ServiceDetailView({
             <div className="col-lg-8">
               <div className="news-details-box">
                 <div className="entry-content features-loop">
-                  <figure className="mt-15 mb-45">
+                  <figure className="mt-15 mb-45 service-detail-figure">
                     <Image
                       src={service.image}
                       alt={pick(service, "title")}
-                      width={900}
-                      height={560}
-                      className="img-fluid"
+                      width={1536}
+                      height={1024}
+                      className="service-detail-image"
+                      sizes="(max-width: 991px) 100vw, 66vw"
+                      priority
                     />
                   </figure>
 
@@ -174,8 +176,9 @@ export default function ServiceDetailView({
                           <Image
                             src={item.image}
                             alt={pick(item, "title")}
-                            width={90}
-                            height={90}
+                            width={180}
+                            height={180}
+                            sizes="90px"
                           />
                         </div>
                         <div className="feed-desc">
