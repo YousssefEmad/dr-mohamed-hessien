@@ -2,24 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import {
+  canEmbedFacebookVideo,
+  getFacebookEmbedSrc,
+  isFacebookShareUrl,
+  normalizeFacebookUrl,
+} from "@/lib/facebookVideo";
 
 /**
- * Build an in-page embed URL for Facebook videos / reels / share links.
- */
-export function getFacebookEmbedSrc(url = "") {
-  if (!url) return "";
-  try {
-    const cleaned = String(url).trim();
-    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-      cleaned
-    )}&show_text=false&width=560&height=315&t=0`;
-  } catch (_) {
-    return "";
-  }
-}
-
-/**
- * Opens a Facebook video in a popup embed — same share links, no page leave.
+ * Opens a Facebook video in a popup embed.
+ * Share short-links cannot be embedded — those open on Facebook instead.
  */
 export default function VideoPopupButton({
   url,
@@ -30,9 +22,16 @@ export default function VideoPopupButton({
 }) {
   const { lang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const src = useMemo(() => getFacebookEmbedSrc(url), [url]);
+  const [iframeFailed, setIframeFailed] = useState(false);
+
+  const canonical = useMemo(() => normalizeFacebookUrl(url), [url]);
+  const embedSrc = useMemo(() => getFacebookEmbedSrc(canonical), [canonical]);
+  const isShareOnly = isFacebookShareUrl(url) || !canEmbedFacebookVideo(canonical);
+
   const watchLabel =
     label || (lang === "en" ? "Watch video" : "مشاهدة الفيديو");
+  const openOnFbLabel =
+    lang === "en" ? "Open on Facebook" : "فتح على فيسبوك";
 
   useEffect(() => {
     if (!open) return undefined;
@@ -50,7 +49,20 @@ export default function VideoPopupButton({
     };
   }, [open]);
 
-  if (!url || !src) return null;
+  useEffect(() => {
+    if (!open) setIframeFailed(false);
+  }, [open]);
+
+  if (!url) return null;
+
+  const handleOpen = () => {
+    // Share links cannot be embedded on static hosting — open Facebook directly.
+    if (isShareOnly) {
+      window.open(url, "_blank", "noopener,noreferrer");
+      return;
+    }
+    setOpen(true);
+  };
 
   return (
     <>
@@ -58,7 +70,7 @@ export default function VideoPopupButton({
         <button
           type="button"
           className={`main-btn btn-filled video-popup-btn ${className}`.trim()}
-          onClick={() => setOpen(true)}
+          onClick={handleOpen}
         >
           <i className="fas fa-play" aria-hidden="true" />
           <span>{watchLabel}</span>
@@ -67,7 +79,7 @@ export default function VideoPopupButton({
         <button
           type="button"
           className={`video-thumb-card ${className}`.trim()}
-          onClick={() => setOpen(true)}
+          onClick={handleOpen}
           aria-label={watchLabel}
         >
           <span className="video-thumb-card__play">
@@ -77,7 +89,7 @@ export default function VideoPopupButton({
         </button>
       )}
 
-      {open ? (
+      {open && embedSrc ? (
         <div className="video-popup" role="dialog" aria-modal="true">
           <div
             className="video-popup__backdrop"
@@ -92,20 +104,52 @@ export default function VideoPopupButton({
             >
               <i className="fal fa-times" />
             </button>
-            <div className="video-popup__embed">
-              <iframe
-                src={src}
-                title={title}
-                width="560"
-                height="315"
-                style={{ border: "none", overflow: "hidden" }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              />
+
+            {!iframeFailed ? (
+              <div className="video-popup__embed">
+                <iframe
+                  src={embedSrc}
+                  title={title}
+                  width="560"
+                  height="315"
+                  style={{ border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  onError={() => setIframeFailed(true)}
+                />
+              </div>
+            ) : (
+              <div className="video-popup__fallback">
+                <p>
+                  {lang === "en"
+                    ? "This video could not be played here."
+                    : "تعذر تشغيل الفيديو هنا."}
+                </p>
+                <a
+                  href={canonical}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="main-btn btn-filled"
+                >
+                  {openOnFbLabel}
+                </a>
+              </div>
+            )}
+
+            <div className="video-popup__actions">
+              {title ? <p className="video-popup__title">{title}</p> : null}
+              <a
+                href={canonical}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="video-popup__fb-link"
+              >
+                <i className="fab fa-facebook" aria-hidden="true" />
+                <span>{openOnFbLabel}</span>
+              </a>
             </div>
-            {title ? <p className="video-popup__title">{title}</p> : null}
           </div>
         </div>
       ) : null}

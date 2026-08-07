@@ -569,6 +569,49 @@ header.header-three .nav-container .menu-right-buttons .offcanvas-trigger {
   line-height: 1.5;
 }
 
+.video-popup__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.video-popup__actions .video-popup__title {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.video-popup__fb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #53a3d6;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.video-popup__fb-link:hover {
+  color: #fff;
+}
+
+.video-popup__fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 220px;
+  padding: 24px;
+  text-align: center;
+  color: #e8eef2;
+  background: #000;
+  border-radius: 8px;
+}
+
 /* Legacy inline embed (unused but harmless) */
 .video-embed {
   position: relative;
