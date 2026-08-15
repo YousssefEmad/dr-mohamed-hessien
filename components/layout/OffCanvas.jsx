@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import PhoneLink from "@/components/shared/PhoneLink";
 import SocialLinks from "@/components/shared/SocialLinks";
-import { siteConfig } from "@/data/site";
-import { aboutPage } from "@/data/pages";
+import { useAboutPage, useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 export default function OffCanvas({ open = false, onClose }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
+  const aboutPage = useAboutPage();
 
   const handleClose = (e) => {
     e?.preventDefault?.();

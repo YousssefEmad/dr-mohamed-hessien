@@ -13,6 +13,9 @@ import {
   getServices,
 } from "@/lib/api/services";
 import { getFaqs } from "@/lib/api";
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
+
+export const revalidate = REVALIDATE_SECONDS;
 
 export async function generateStaticParams() {
   const slugs = await getServiceSlugs();

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 import PhoneLink from "@/components/shared/PhoneLink";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { navigation, uiLabels } from "@/data/navigation";
 
 export default function Header({
@@ -16,6 +16,7 @@ export default function Header({
   onToggleOffcanvas,
 }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);

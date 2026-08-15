@@ -3,6 +3,10 @@ import JsonLd from "@/components/seo/JsonLd";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { getServices } from "@/lib/api/services";
 
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
+
+export const revalidate = REVALIDATE_SECONDS;
+
 export const metadata = buildMetadata({
   titleAr: "الخدمات الطبية | عيادات الدكتور محمد حسين",
   titleEn: "Medical Services | Dr. Mohamed Hessien Clinics",

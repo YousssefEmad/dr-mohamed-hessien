@@ -2,6 +2,10 @@ import GalleryPageView from "@/components/gallery/GalleryPageView";
 import { buildMetadata } from "@/lib/seo";
 import { getGalleryItems, getGalleryPage } from "@/lib/api";
 
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
+
+export const revalidate = REVALIDATE_SECONDS;
+
 export async function generateMetadata() {
   const page = await getGalleryPage();
   return buildMetadata({ ...page.seo, path: "/gallery/" });

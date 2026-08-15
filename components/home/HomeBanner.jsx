@@ -1,8 +1,9 @@
 "use client";
 
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 
 export default function HomeBanner() {
+  const siteConfig = useSiteConfig();
   return (
     <section className="banner-area banner-style-two" id="bannerSlider">
       <div className="single-banner d-flex align-items-center justify-content-center">

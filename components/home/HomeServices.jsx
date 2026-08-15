@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 const HOME_SERVICES_LIMIT = 2;
 
 export default function HomeServices({ services = [], sections }) {
   const { pick, t } = useLanguage();
+  const siteConfig = useSiteConfig();
   const preview = services.slice(0, HOME_SERVICES_LIMIT);
 
   return (

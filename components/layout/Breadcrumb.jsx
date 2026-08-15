@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 export default function Breadcrumb({
@@ -13,6 +13,7 @@ export default function Breadcrumb({
   background,
 }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
   const pageTitle =
     title ||
     (lang === "en" ? titleEn || titleAr : titleAr || titleEn) ||

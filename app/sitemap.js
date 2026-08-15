@@ -2,7 +2,7 @@ import { siteConfig } from "@/data/site";
 import { getServiceSlugs } from "@/lib/api/services";
 import { getPostSlugs } from "@/lib/api/blog";
 
-export const dynamic = "force-static";
+export const revalidate = 60;
 
 export default async function sitemap() {
   const base = siteConfig.url;

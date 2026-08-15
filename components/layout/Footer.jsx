@@ -5,12 +5,13 @@ import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import PhoneLink from "@/components/shared/PhoneLink";
 import SocialLinks from "@/components/shared/SocialLinks";
-import { siteConfig } from "@/data/site";
+import { useAboutPage, useSiteConfig } from "@/context/SiteContext";
 import { footerQuickLinks, uiLabels } from "@/data/navigation";
-import { aboutPage } from "@/data/pages";
 
 export default function Footer({ services = [] }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
+  const aboutPage = useAboutPage();
 
   return (
     <footer className="footer-two">

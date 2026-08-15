@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export for Hostinger shared hosting
-  output: "export",
+  // Node hosting (Hostinger Deploy Web App) — ISR يحدّث المحتوى من Sanity
   trailingSlash: true,
   images: {
     unoptimized: true,

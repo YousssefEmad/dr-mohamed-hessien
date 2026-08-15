@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import SafeHtml from "@/components/ui/SafeHtml";
 import PhoneLink from "@/components/shared/PhoneLink";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 const VERTICAL_SOCIAL = [
@@ -21,6 +21,7 @@ function isRealSocialUrl(url = "") {
 
 export default function HomeAbout({ about, sections }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
   const socialItems = VERTICAL_SOCIAL.filter((item) =>
     isRealSocialUrl(siteConfig.social?.[item.key])
   );

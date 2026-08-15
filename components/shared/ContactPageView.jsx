@@ -4,11 +4,12 @@ import Breadcrumb from "@/components/layout/Breadcrumb";
 import ContactForm from "@/components/shared/ContactForm";
 import PhoneLink from "@/components/shared/PhoneLink";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 export default function ContactPageView({ page, services = [] }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
 
   return (
     <>

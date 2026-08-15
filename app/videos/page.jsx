@@ -2,6 +2,10 @@ import VideosPageView from "@/components/shared/VideosPageView";
 import { buildMetadata } from "@/lib/seo";
 import { getVideos, getVideosPage } from "@/lib/api";
 
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
+
+export const revalidate = REVALIDATE_SECONDS;
+
 export async function generateMetadata() {
   const page = await getVideosPage();
   return buildMetadata({ ...page.seo, path: "/videos/" });

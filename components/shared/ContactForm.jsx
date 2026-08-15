@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
-import { contactPage } from "@/data/contact";
-import { siteConfig } from "@/data/site";
+import { contactPage as localContact } from "@/data/contact";
 
-async function sendViaFormSubmit(payload, lang) {
+async function sendViaFormSubmit(payload, lang, siteConfig) {
   const email = siteConfig.contactEmail || siteConfig.email;
   const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
     method: "POST",
@@ -36,12 +36,11 @@ async function sendViaFormSubmit(payload, lang) {
   return result;
 }
 
-async function sendViaPhp(payload, lang) {
+async function sendViaPhp(payload, lang, siteConfig) {
   const body = new FormData();
   Object.entries(payload).forEach(([key, value]) => {
     body.append(key, value);
   });
-  body.append("to", siteConfig.contactEmail || siteConfig.email);
   body.append(
     "_subject",
     lang === "en"
@@ -71,6 +70,8 @@ async function sendViaPhp(payload, lang) {
 
 export default function ContactForm({ services = [] }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
+  const contactPage = siteConfig.contactPage || localContact;
   const [status, setStatus] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -93,13 +94,13 @@ export default function ContactForm({ services = [] }) {
 
     try {
       // Works on localhost + production (no PHP required)
-      await sendViaFormSubmit(payload, lang);
+      await sendViaFormSubmit(payload, lang, siteConfig);
       setStatus("ok");
       form.reset();
     } catch (_) {
       try {
         // Fallback for Hostinger PHP mailer after deploy
-        await sendViaPhp(payload, lang);
+        await sendViaPhp(payload, lang, siteConfig);
         setStatus("ok");
         form.reset();
       } catch (__) {

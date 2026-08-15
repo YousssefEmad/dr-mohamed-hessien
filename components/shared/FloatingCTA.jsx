@@ -1,10 +1,11 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 
 export default function FloatingCTA() {
   const { lang } = useLanguage();
+  const siteConfig = useSiteConfig();
   const callLabel = lang === "en" ? "Call" : "اتصل";
   const whatsappLabel = lang === "en" ? "WhatsApp" : "واتساب";
   const whatsappMessage =

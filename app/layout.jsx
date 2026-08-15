@@ -6,6 +6,8 @@ import JsonLd from "@/components/seo/JsonLd";
 import { buildMetadata, organizationSchema, localBusinessSchema } from "@/lib/seo";
 import { siteSeo } from "@/data/site";
 import { getServices } from "@/lib/api/services";
+import { getAboutPage, getSiteConfig } from "@/lib/api";
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -15,10 +17,12 @@ const cairo = Cairo({
   fallback: ["Tahoma", "Arial", "sans-serif"],
 });
 
-export const metadata = buildMetadata({
-  ...siteSeo,
-  path: "/",
-});
+export const revalidate = REVALIDATE_SECONDS;
+
+export async function generateMetadata() {
+  const site = await getSiteConfig();
+  return buildMetadata({ ...(site.seo || siteSeo), path: "/" }, site);
+}
 
 export const viewport = {
   width: "device-width",
@@ -27,7 +31,11 @@ export const viewport = {
 };
 
 export default async function RootLayout({ children }) {
-  const services = await getServices();
+  const [services, siteConfig, aboutPage] = await Promise.all([
+    getServices(),
+    getSiteConfig(),
+    getAboutPage(),
+  ]);
 
   return (
     <html
@@ -70,8 +78,8 @@ export default async function RootLayout({ children }) {
         <link rel="stylesheet" href="/css/lang.css" />
       </head>
       <body className={`lang-ar ${cairo.className}`} suppressHydrationWarning>
-        <JsonLd data={[organizationSchema(), localBusinessSchema()]} />
-        <Providers>
+        <JsonLd data={[organizationSchema(siteConfig), localBusinessSchema(siteConfig)]} />
+        <Providers siteConfig={siteConfig} aboutPage={aboutPage}>
           <SiteShell services={services}>{children}</SiteShell>
         </Providers>
       </body>

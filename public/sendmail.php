@@ -1,16 +1,14 @@
 <?php
 /**
  * Contact / booking form mailer for Hostinger.
- * Place this file in the site root next to index.html (inside out/ when deploying).
- *
- * Configure recipient via $TO_EMAIL below, or leave empty to use the "to" field from the form
- * (the Next app already sends siteConfig.contactEmail).
+ * Recipient is hardcoded — POST "to" is ignored on purpose.
  */
 
 header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: https://drmohamedhessien.com');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Accept');
+header('Vary: Origin');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
@@ -23,21 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-/** Change this to the doctor's real inbox if needed */
+function clean_header($value) {
+    return str_replace(["\r", "\n"], '', trim((string)$value));
+}
+
+/** Inbox that receives form submissions */
 $TO_EMAIL = 'youssef7200143@gmail.com';
 
-$name    = trim((string)($_POST['name'] ?? ''));
+$name    = clean_header($_POST['name'] ?? '');
 $email   = trim((string)($_POST['email'] ?? ''));
 $phone   = trim((string)($_POST['phone'] ?? ''));
 $service = trim((string)($_POST['service'] ?? ''));
 $message = trim((string)($_POST['message'] ?? ''));
 $lang    = trim((string)($_POST['lang'] ?? 'ar'));
-$toField = trim((string)($_POST['to'] ?? ''));
-$subject = trim((string)($_POST['_subject'] ?? ''));
-
-if ($toField !== '' && filter_var($toField, FILTER_VALIDATE_EMAIL)) {
-    $TO_EMAIL = $toField;
-}
+$subject = clean_header($_POST['_subject'] ?? '');
 
 if ($name === '' || $email === '' || $phone === '' || $message === '') {
     http_response_code(422);
@@ -75,10 +72,12 @@ $body .= "الرسالة / Message:\n{$message}\n";
 $body .= "================================\n";
 $body .= "Sent from the website contact form\n";
 
+$host = clean_header($_SERVER['HTTP_HOST'] ?? 'drmohamedhessien.com');
+
 $headers   = [];
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers[] = 'From: Website <noreply@' . ($_SERVER['HTTP_HOST'] ?? 'drmohamedhessien.com') . '>';
+$headers[] = 'From: Website <noreply@' . $host . '>';
 $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
 $headers[] = 'X-Mailer: PHP/' . phpversion();
 

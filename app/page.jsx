@@ -8,12 +8,17 @@ import {
   getHomeSections,
   getGalleryItems,
   getTestimonials,
+  getSiteConfig,
 } from "@/lib/api";
 
-export const metadata = buildMetadata({
-  ...siteSeo,
-  path: "/",
-});
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
+
+export const revalidate = REVALIDATE_SECONDS;
+
+export async function generateMetadata() {
+  const site = await getSiteConfig();
+  return buildMetadata({ ...(site.seo || siteSeo), path: "/" }, site);
+}
 
 export default async function HomePage() {
   const [about, sections, services, gallery, testimonials, posts] =

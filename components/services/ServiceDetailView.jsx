@@ -7,7 +7,7 @@ import ContactForm from "@/components/shared/ContactForm";
 import VideoPopupButton from "@/components/shared/VideoPopupButton";
 import SocialLinks from "@/components/shared/SocialLinks";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 export default function ServiceDetailView({
@@ -17,6 +17,7 @@ export default function ServiceDetailView({
   allServices = [],
 }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
   const highlights =
     lang === "en" ? service.highlightsEn : service.highlightsAr;
   const whyChoose = lang === "en" ? service.whyChooseEn : service.whyChooseAr;

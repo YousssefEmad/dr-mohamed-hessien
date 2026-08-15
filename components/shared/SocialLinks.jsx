@@ -1,6 +1,6 @@
 "use client";
 
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 
 const SOCIAL_ITEMS = [
   { key: "facebook", icon: "fab fa-facebook-f", label: "Facebook" },
@@ -14,6 +14,7 @@ export default function SocialLinks({
   linkClassName = "",
   asList = false,
 }) {
+  const siteConfig = useSiteConfig();
   const items = SOCIAL_ITEMS.filter((item) => {
     const url = siteConfig.social?.[item.key];
     return Boolean(url && !url.endsWith(".com/") && !url.endsWith(".com"));

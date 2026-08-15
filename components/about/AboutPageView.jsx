@@ -6,11 +6,12 @@ import Image from "next/image";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import SafeHtml from "@/components/ui/SafeHtml";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteConfig } from "@/data/site";
+import { useSiteConfig } from "@/context/SiteContext";
 import { uiLabels } from "@/data/navigation";
 
 export default function AboutPageView({ about, services = [] }) {
   const { pick, t, lang } = useLanguage();
+  const siteConfig = useSiteConfig();
   const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {

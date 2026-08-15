@@ -4,6 +4,10 @@ import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { getAboutPage } from "@/lib/api";
 import { getServices } from "@/lib/api/services";
 
+import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
+
+export const revalidate = REVALIDATE_SECONDS;
+
 export async function generateMetadata() {
   const about = await getAboutPage();
   return buildMetadata({ ...about.seo, path: "/about/" });
