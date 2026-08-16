@@ -18,6 +18,8 @@ const cairo = Cairo({
 });
 
 export const revalidate = REVALIDATE_SECONDS;
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 export async function generateMetadata() {
   const site = await getSiteConfig();

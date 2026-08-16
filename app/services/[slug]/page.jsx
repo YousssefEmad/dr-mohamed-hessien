@@ -16,6 +16,7 @@ import { getFaqs } from "@/lib/api";
 import { REVALIDATE_SECONDS } from "@/lib/sanity/revalidate";
 
 export const revalidate = REVALIDATE_SECONDS;
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   const slugs = await getServiceSlugs();
