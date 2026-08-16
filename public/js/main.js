@@ -999,10 +999,8 @@ var mirandaDoc;
 
     // Window Load
     $(window).on('load', function() {
-        //===== 17. Preloader
-        $('.preloader').fadeOut('slow', function() {
-            $(this).remove();
-        });
+        // Preloader removed — Next.js should paint immediately
+
     /*======================================
       Page Scroll Percentage
       ========================================*/

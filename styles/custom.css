@@ -94,15 +94,13 @@ a[href*="wa.me"] {
   object-fit: cover;
 }
 
-/* Fast preloader — short fade then unmount */
+/* Preloader disabled — Next.js paints immediately */
 .preloader {
-  transition: opacity 0.15s ease, visibility 0.15s ease;
+  display: none !important;
 }
 
-.preloader.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.wow {
+  visibility: visible !important;
 }
 
 /* Language switch (no reload) */

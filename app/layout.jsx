@@ -46,17 +46,6 @@ export default async function RootLayout({ children }) {
     >
       <head>
         <link rel="icon" href="/img/logo.png" type="image/png" />
-        {/* Fallback Cairo for legacy CSS — next/font is primary */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"

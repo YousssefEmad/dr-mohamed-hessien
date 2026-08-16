@@ -5,7 +5,13 @@
  */
 
 header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: https://drmohamedhessien.com');
+
+$allowedOrigins = [
+    'https://dr-mohamedhessien.com',
+    'https://www.dr-mohamedhessien.com',
+];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+header('Access-Control-Allow-Origin: ' . (in_array($origin, $allowedOrigins, true) ? $origin : 'https://dr-mohamedhessien.com'));
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Accept');
 header('Vary: Origin');
@@ -72,7 +78,7 @@ $body .= "الرسالة / Message:\n{$message}\n";
 $body .= "================================\n";
 $body .= "Sent from the website contact form\n";
 
-$host = clean_header($_SERVER['HTTP_HOST'] ?? 'drmohamedhessien.com');
+$host = clean_header($_SERVER['HTTP_HOST'] ?? 'dr-mohamedhessien.com');
 
 $headers   = [];
 $headers[] = 'MIME-Version: 1.0';

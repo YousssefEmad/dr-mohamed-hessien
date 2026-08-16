@@ -6,7 +6,7 @@ import {structure} from './structure'
 
 export default defineConfig({
   name: 'default',
-  title: 'dr-mohamed-hessien',
+  title: 'د. محمد حسين',
 
   projectId: 'ftar3gpm',
   dataset: 'production',

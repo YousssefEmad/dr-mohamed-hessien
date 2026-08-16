@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import OffCanvas from "@/components/layout/OffCanvas";
-import Preloader from "@/components/layout/Preloader";
 import ClientPlugins from "@/components/layout/ClientPlugins";
 import FloatingCTA from "@/components/shared/FloatingCTA";
 
@@ -33,7 +32,6 @@ export default function SiteShell({ children, services = [] }) {
 
   return (
     <>
-      <Preloader />
       <div id="scroll-percentage">
         <span
           id="scroll-percentage-value"

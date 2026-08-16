@@ -22,20 +22,6 @@ export default function ClientPlugins() {
       const $ = window.jQuery;
 
       try {
-        if (window.WOW) {
-          new window.WOW({
-            boxClass: "wow",
-            animateClass: "animated",
-            offset: 0,
-            mobile: false,
-            live: true,
-          }).init();
-        }
-      } catch (_) {
-        /* ignore */
-      }
-
-      try {
         if (window.mirandaDoc && typeof window.mirandaDoc.init === "function") {
           if (!window.__themeInited) {
             // Disable jQuery menu/offcanvas — React owns these interactions
@@ -78,30 +64,20 @@ export default function ClientPlugins() {
 
   return (
     <>
-      <Script
-        src="/js/vendor/jquery-1.12.4.min.js"
-        strategy="afterInteractive"
-      />
-      <Script src="/js/popper.min.js" strategy="afterInteractive" />
-      <Script src="/js/bootstrap.min.js" strategy="afterInteractive" />
-      <Script src="/js/slick.min.js" strategy="afterInteractive" />
-      <Script src="/js/isotope.pkgd.min.js" strategy="afterInteractive" />
-      <Script
-        src="/js/jquery.magnific-popup.min.js"
-        strategy="afterInteractive"
-      />
-      <Script src="/js/jquery.inview.min.js" strategy="afterInteractive" />
-      <Script src="/js/jquery.countTo.js" strategy="afterInteractive" />
-      <Script
-        src="/js/jquery.nice-select.min.js"
-        strategy="afterInteractive"
-      />
-      <Script src="/js/wow.min.js" strategy="afterInteractive" />
+      <Script src="/js/vendor/jquery-1.12.4.min.js" strategy="lazyOnload" />
+      <Script src="/js/popper.min.js" strategy="lazyOnload" />
+      <Script src="/js/bootstrap.min.js" strategy="lazyOnload" />
+      <Script src="/js/slick.min.js" strategy="lazyOnload" />
+      <Script src="/js/isotope.pkgd.min.js" strategy="lazyOnload" />
+      <Script src="/js/jquery.magnific-popup.min.js" strategy="lazyOnload" />
+      <Script src="/js/jquery.inview.min.js" strategy="lazyOnload" />
+      <Script src="/js/jquery.countTo.js" strategy="lazyOnload" />
+      <Script src="/js/jquery.nice-select.min.js" strategy="lazyOnload" />
       <Script
         src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script src="/js/main.js" strategy="afterInteractive" />
+      <Script src="/js/main.js" strategy="lazyOnload" />
     </>
   );
 }

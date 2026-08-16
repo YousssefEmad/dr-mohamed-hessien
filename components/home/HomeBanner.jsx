@@ -9,7 +9,7 @@ export default function HomeBanner() {
       <div className="single-banner d-flex align-items-center justify-content-center">
         <div className="circle-out" />
         <div className="banner-video">
-          <video autoPlay muted loop playsInline>
+          <video autoPlay muted loop playsInline preload="metadata">
             <source src={siteConfig.videoBanner} type="video/mp4" />
           </video>
         </div>
